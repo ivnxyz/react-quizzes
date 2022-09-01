@@ -1,14 +1,7 @@
 import React, { forwardRef } from "react";
 import ReactQuill, { Quill } from "react-quill";
-import { Tabs, Tooltip, Row, Popconfirm, Button } from "antd";
 import "react-quill/dist/quill.snow.css";
 import "./quillFormInput.css";
-import ISO6391 from "iso-639-1";
-import AddDropdown from "./AddDropdown";
-import TranslatedText from "../../../../../../../../translations/TranslatedText";
-
-const { TabPane } = Tabs;
-const { getNativeName } = ISO6391;
 
 const Size = Quill.import("attributors/style/size");
 const text_size = [
@@ -70,11 +63,7 @@ export default forwardRef((props: any, ref) => {
     defaultValue,
     onChange,
     currentLanguage,
-    setLanguage,
-    onNewLanguage,
-    onRemoveLanguage,
   } = props;
-  const questionLanguages: Array<string> = Object.keys(value);
 
   function onChangeHandler(
     content: string
@@ -85,60 +74,14 @@ export default forwardRef((props: any, ref) => {
     onChange({ ...value, [currentLanguage]: content });
   }
 
-  function preventPropagation(e?: React.MouseEvent<HTMLElement, MouseEvent>) {
-    if (e) {
-      e.stopPropagation();
-      e.preventDefault();
-    }
-  }
   return (
-    <Tabs
-      ref={ref as any}
-      onChange={setLanguage}
-      activeKey={currentLanguage}
-      tabBarExtraContent={
-        <AddDropdown disabled={questionLanguages} onChange={onNewLanguage} />
-      }
-    >
-      {questionLanguages.map((lang) => (
-        <TabPane
-          // native language name
-          tab={
-            <Row>
-              <Tooltip title={lang}>{getNativeName(lang)}</Tooltip>
-              &nbsp;
-              {questionLanguages.length > 1 ? (
-                <Popconfirm
-                  title={<TranslatedText id="confirm.action" />}
-                  okText={<TranslatedText id="btn.yes" />}
-                  cancelText={<TranslatedText id="btn.no" />}
-                  onConfirm={(e) => {
-                    preventPropagation(e);
-                    onRemoveLanguage(lang);
-                  }}
-                >
-                  <Button
-                    shape="circle"
-                    icon="close"
-                    size="small"
-                    onClick={preventPropagation}
-                  />
-                </Popconfirm>
-              ) : null}
-            </Row>
-          }
-          key={lang}
-        >
-          <ReactQuill
-            theme="snow"
-            placeholder="Question?"
-            defaultValue={defaultValue}
-            value={value[currentLanguage] || ""}
-            onChange={onChangeHandler}
-            modules={modules}
-          />
-        </TabPane>
-      ))}
-    </Tabs>
+    <ReactQuill
+      theme="snow"
+      placeholder="Question?"
+      defaultValue={defaultValue}
+      value={value[currentLanguage] || ""}
+      onChange={onChangeHandler}
+      modules={modules}
+    />
   );
 });

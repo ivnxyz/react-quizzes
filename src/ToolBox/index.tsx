@@ -17,17 +17,12 @@ import multiLineInputIcon from "./CustomIcons/multiLineInputIcon";
 function _defaultItems() {
   // deafult sample question
   const questions = {
-    en: "Sample question ?",
-    pt: "Pergunta exemplo ?"
+    es: "Pregunta ejemplo",
   };
 
   const options = [
     {
       value: "1",
-      text: { ...questions }
-    },
-    {
-      value: "2",
       text: { ...questions }
     }
   ];

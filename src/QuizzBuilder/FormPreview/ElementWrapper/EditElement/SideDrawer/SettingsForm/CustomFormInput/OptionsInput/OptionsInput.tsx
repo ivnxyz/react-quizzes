@@ -75,15 +75,8 @@ export default forwardRef((props: any, ref) => {
       </Row>
       <Row>
         <Col xs={24} sm={12}>
-          <TextWithInfo
-            title={
-              <>
-                <p>Each option can be translated</p>
-                <p>Current Language:&nbsp;{currentLanguage}</p>
-              </>
-            }
-          >
-            Text:
+          <TextWithInfo title="Es el texto que se mostrará en la opción">
+            Texto:
           </TextWithInfo>
           {/* Text options */}
           <Tabs
@@ -105,7 +98,7 @@ export default forwardRef((props: any, ref) => {
           </Tabs>
         </Col>
         <Col xs={24} sm={12}>
-          <TextWithInfo title="Value is hidden from user, and its the same betwen languages">
+          <TextWithInfo title="El valor está oculto del usuario">
             Value:
           </TextWithInfo>
 
