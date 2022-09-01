@@ -15,7 +15,7 @@ export default forwardRef((props: any, ref: any) => {
       label={
         <label
           dangerouslySetInnerHTML={{
-            __html: questions[language] || "no question for selected language"
+            __html: questions[language] || "No hay una pregunta para el lenguaje seleccionado"
           }}
         />
       }
@@ -25,7 +25,7 @@ export default forwardRef((props: any, ref: any) => {
         rules: [
           {
             required,
-            message: "Required Field"
+            message: "Campo requerido"
           }
         ]
       })(

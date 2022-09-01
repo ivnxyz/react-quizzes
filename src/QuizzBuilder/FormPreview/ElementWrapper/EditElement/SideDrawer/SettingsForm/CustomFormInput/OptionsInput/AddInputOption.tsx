@@ -50,7 +50,7 @@ export default ({ onAdd, languagesList, existingOptions }: any) => {
       const currentOptionValue = existingOptions[index]["value"];
       if (newOptionValue === currentOptionValue) {
         // error message for already existing value (values must be unique by question)
-        return message.error("Value already exists");
+        return message.error("Esta opción ya existe");
       }
     }
 
@@ -61,7 +61,7 @@ export default ({ onAdd, languagesList, existingOptions }: any) => {
       closeDrawer();
     } else {
       // error message for required languages
-      message.error("All fields are required");
+      message.error("Todos los campos son requeridos");
     }
   }
 
@@ -71,13 +71,13 @@ export default ({ onAdd, languagesList, existingOptions }: any) => {
         <TranslatedText id="btn.add" />
       </Button>
       <Drawer
-        title="Add New Option"
+        title="Agregar nueva opción"
         width={150}
         onClose={closeDrawer}
         visible={drawerVisibility}
         destroyOnClose
       >
-        <FormItem label="Languages">
+        <FormItem label="Opción">
           {languagesList.map((language: string, i: number) => {
             return (
               <Fragment key={i}>
@@ -89,7 +89,7 @@ export default ({ onAdd, languagesList, existingOptions }: any) => {
             );
           })}
         </FormItem>
-        <FormItem label="Value">
+        <FormItem label="Valor">
           <Input onChange={onChangeInput} />
         </FormItem>
         <BottomButtons onClose={closeDrawer} onSubmit={onSaveOption} />

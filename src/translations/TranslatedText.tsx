@@ -2,6 +2,7 @@ import React, { useContext, memo } from "react";
 import QuizzContext from "../QuizzContext";
 import ISO6391 from "iso-639-1";
 import en from "./messages/en.json";
+import es from "./messages/es.json";
 
 const { validate } = ISO6391;
 
@@ -13,7 +14,8 @@ export interface MessagesRecord {
 }
 
 export const defaultMessages: MessagesRecord = {
-  en: en
+  en: en,
+  es: es
 };
 
 function TranslatedText(props: { id: string }) {
