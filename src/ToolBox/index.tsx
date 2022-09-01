@@ -40,37 +40,6 @@ function _defaultItems() {
 
   return [
     {
-      key: "HeaderText",
-      name: "toolbox.headertext.name", // id of translation
-      questions,
-      // description: "toolbox.headertext.description", // desciption under input on toolbox
-      icon: (
-        <Avatar>
-          <Icon component={headerIcon} />
-        </Avatar>
-      ), // this will go to Dom so can be string|| jsx component
-      field_name: "header_text_", // will add a generated uuidv4
-      Component: HeaderText // component not instanciated
-    },
-    {
-      key: "LabelText",
-      name: "toolbox.label.name", // id of translation
-      questions,
-      // description: "toolbox.label.description", // desciption under input on toolbox
-      icon: <Avatar icon="font-colors" />, // this will go to Dom so can be string|| jsx component
-      field_name: "label_", // will add a generated uuidv4
-      Component: Label // component not instanciated
-    },
-    {
-      key: "Divider",
-      name: "toolbox.divider.name", // id of translation
-      questions,
-      // description: "toolbox.label.description", // desciption under input on toolbox
-      icon: <Avatar icon="line" />, // this will go to Dom so can be string|| jsx component
-      field_name: "divider_", // will add a generated uuidv4
-      Component: Divider // component not instanciated
-    },
-    {
       key: "Select",
       name: "toolbox.select.name", // id of translation
       questions,
@@ -80,16 +49,16 @@ function _defaultItems() {
       field_name: "select_", // will add a generated uuidv4
       Component: Select // component not instanciated
     },
-    {
-      key: "Tags",
-      name: "toolbox.tags.name", // id of translation
-      questions,
-      options,
-      // description: "toolbox.label.description", // desciption under input on toolbox
-      icon: <Avatar icon="tags" />, // this will go to Dom so can be string|| jsx component
-      field_name: "tags_", // will add a generated uuidv4
-      Component: Tags // component not instanciated
-    },
+    // {
+    //   key: "Tags",
+    //   name: "toolbox.tags.name", // id of translation
+    //   questions,
+    //   options,
+    //   // description: "toolbox.label.description", // desciption under input on toolbox
+    //   icon: <Avatar icon="tags" />, // this will go to Dom so can be string|| jsx component
+    //   field_name: "tags_", // will add a generated uuidv4
+    //   Component: Tags // component not instanciated
+    // },
     {
       key: "Checkboxes",
       name: "toolbox.checkboxes.name", // id of translation
@@ -161,15 +130,6 @@ function _defaultItems() {
       icon: <Avatar icon="star" />, // this will go to Dom so can be string|| jsx component
       field_name: "rate_", // will add a generated uuidv4
       Component: Rate // component not instanciated
-    },
-    {
-      key: "DatePicker",
-      name: "toolbox.datepicker.name", // id of translation
-      questions,
-      // description: "toolbox.textInput.description", // desciption under input on toolbox
-      icon: <Avatar icon="calendar" />, // this will go to Dom so can be string|| jsx component
-      field_name: "datepicker_", // will add a generated uuidv4
-      Component: DatePicker // component not instanciated
     }
   ];
 }
