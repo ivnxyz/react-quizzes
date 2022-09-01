@@ -50,6 +50,20 @@ export default forwardRef((props: any, ref) => {
     onChange(valueClone);
   }
 
+  // on set correct answrt
+  function onSetRightAnswer(index: number) {
+    const valueClone = cloneDeep(value);
+    const answerOption = valueClone[index];
+
+    if (!!answerOption.isCorrect) {
+      delete answerOption.isCorrect;
+    } else {
+      answerOption.isCorrect = true;
+    }
+
+    onChange(valueClone);
+  }
+
   return (
     <Row>
       <Row>
@@ -98,10 +112,18 @@ export default forwardRef((props: any, ref) => {
           {/* VALUES ARE THE SAME BETWEEN LANGUAGES */}
           {value.map((option: any, i: number) => (
             <Row key={i}>
-              <Col span={20}>
+              <Col span={16}>
                 <Input
                   value={option.value}
                   onChange={e => onChangeInput(i, e.target.value)}
+                />
+              </Col>
+              <Col style={{ textAlign: "center" }} span={4}>
+                <Button
+                  style={!!value[i].isCorrect ? { background: "green", color: "white" } : {}}
+                  icon="check"
+                  shape="circle"
+                  onClick={() => onSetRightAnswer(i)}
                 />
               </Col>
               <Col style={{ textAlign: "center" }} span={4}>

@@ -37,10 +37,10 @@ export default memo(function(props: any) {
     <div className="react-quizzes-builder">
       <QuizzContext.Provider value={contextValue}>
         <Row style={{ height: "100%" }}>
-          <Col sm={6} xs={24} order={0}>
+          <Col xs={24} order={0}>
             <ToolBox />
           </Col>
-          <Col xs={24} sm={18} order={1} style={{ height: "100%" }}>
+          <Col xs={24} order={1} style={{ height: "100%" }}>
             <FormPreview />
           </Col>
         </Row>
