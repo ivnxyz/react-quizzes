@@ -99,7 +99,7 @@ export default forwardRef((props: any, ref) => {
         </Col>
         <Col xs={24} sm={12}>
           <TextWithInfo title="El valor está oculto del usuario">
-            Value:
+            Valor:
           </TextWithInfo>
 
           {/* VALUES ARE THE SAME BETWEEN LANGUAGES */}
