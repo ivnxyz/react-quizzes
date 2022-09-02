@@ -74,7 +74,7 @@ export default forwardRef((props: any, ref) => {
         />
       </Row>
       <Row>
-        <Col xs={24} sm={12}>
+        <Col xs={16} sm={12}>
           <TextWithInfo title="Es el texto que se mostrará en la opción">
             Texto:
           </TextWithInfo>
@@ -97,7 +97,7 @@ export default forwardRef((props: any, ref) => {
             ))}
           </Tabs>
         </Col>
-        <Col xs={24} sm={12}>
+        <Col xs={8} sm={12}>
           <TextWithInfo title="Selecciona la respuesta para indicar que es correcta">
             Correcta
           </TextWithInfo>
