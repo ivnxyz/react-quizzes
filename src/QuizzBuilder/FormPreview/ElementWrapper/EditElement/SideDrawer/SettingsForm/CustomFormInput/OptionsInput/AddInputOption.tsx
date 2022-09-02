@@ -5,6 +5,7 @@ import Drawer from "antd/es/drawer";
 import Input from "antd/es/input/Input";
 import FormItem from "antd/es/form/FormItem";
 import message from "antd/es/message";
+import cloneDeep from "lodash.clonedeep";
 import TranslatedText from "../../../../../../../../translations/TranslatedText";
 
 export default ({ onAdd, languagesList, existingOptions }: any) => {
@@ -26,7 +27,7 @@ export default ({ onAdd, languagesList, existingOptions }: any) => {
     e: React.ChangeEvent<HTMLInputElement>,
     language?: string
   ) {
-    const tempNewOption = { ...newOption };
+    const tempNewOption = cloneDeep(newOption);
 
     if (language) {
       tempNewOption["text"][language] = e.target.value;
