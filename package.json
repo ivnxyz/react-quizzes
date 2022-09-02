@@ -1,6 +1,6 @@
 {
   "name": "react-quizzes-fork",
-  "version": "0.3.10",
+  "version": "0.3.11",
   "private": false,
   "description": "React quizz/form builder and delivery solution",
   "main": "lib/App.js",
