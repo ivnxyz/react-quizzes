@@ -28,12 +28,13 @@ export default ({ onAdd, languagesList, existingOptions }: any) => {
     language?: string
   ) {
     const tempNewOption = cloneDeep(newOption);
+    const lastElement = existingOptions[existingOptions.length - 1];
+    tempNewOption["value"] = `${parseInt(lastElement.value) + 1}`;
 
     if (language) {
       tempNewOption["text"][language] = e.target.value;
-    } else {
-      tempNewOption["value"] = e.target.value;
     }
+
     setNewOption(tempNewOption);
   }
 
@@ -82,9 +83,6 @@ export default ({ onAdd, languagesList, existingOptions }: any) => {
               </Fragment>
             );
           })}
-        </FormItem>
-        <FormItem label="Valor">
-          <Input onChange={onChangeInput} />
         </FormItem>
         <BottomButtons onClose={closeDrawer} onSubmit={onSaveOption} />
       </Drawer>

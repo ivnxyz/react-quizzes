@@ -98,19 +98,12 @@ export default forwardRef((props: any, ref) => {
           </Tabs>
         </Col>
         <Col xs={24} sm={12}>
-          <TextWithInfo title="El valor está oculto del usuario">
-            Valor:
+          <TextWithInfo title="Selecciona la respuesta para indicar que es correcta">
+            Correcta
           </TextWithInfo>
 
-          {/* VALUES ARE THE SAME BETWEEN LANGUAGES */}
           {value.map((option: any, i: number) => (
             <Row key={i}>
-              <Col span={16}>
-                <Input
-                  value={option.value}
-                  onChange={e => onChangeInput(i, e.target.value)}
-                />
-              </Col>
               <Col style={{ textAlign: "center" }} span={4}>
                 <Button
                   style={!!value[i].isCorrect ? { background: "green", color: "white" } : {}}
