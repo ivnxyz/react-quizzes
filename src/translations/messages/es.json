@@ -22,5 +22,6 @@
   "confirm.action": "¿Estás seguro?",
   "btn.yes": "Sí",
   "btn.no": "No",
-  "btn.add": "Agregar"
+  "btn.add": "Agregar",
+  "settings.form.image": "Agrega una imagen a la pregunta"
 }

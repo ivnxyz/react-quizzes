@@ -45,14 +45,19 @@ class Quizz extends PureComponent<any, any> {
                 : Empty;
 
               return (
-                <Component
-                  // render the toolbox component
-                  key={item.id}
-                  form={form}
-                  toolboxData={found_toolbox_input}
-                  inputData={item}
-                  language={contextValue["language"]}
-                />
+                <div key={item.id}>
+                  {
+                    (item.imageUrl && item.imageUrl.length > 0) && <img style={{width: '100%', marginBottom: '1rem', borderRadius: '10px', maxHeight: '10rem', objectFit: 'cover', objectPosition: 'center'}} src={item.imageUrl} alt="" />
+                  }
+                  <Component
+                    // render the toolbox component
+                    key={item.id}
+                    form={form}
+                    toolboxData={found_toolbox_input}
+                    inputData={item}
+                    language={contextValue["language"]}
+                  />
+                </div>
               );
             })}
             {submitButton ? (

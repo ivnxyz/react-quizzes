@@ -5,6 +5,7 @@ import QuillFormInput from "./CustomFormInput/QuillFormInput";
 import TranslatedText from "../../../../../../translations/TranslatedText";
 import OptionsInput from "./CustomFormInput/OptionsInput/OptionsInput";
 import cloneDeep from "lodash.clonedeep";
+import Input from "antd/es/input/Input";
 
 // this must be a class component because of parent components acessing the prop "wrappedComponentRef"
 // to be able to access form props and make a custom submit on parent for example.
@@ -82,6 +83,15 @@ class DrawerForm extends PureComponent<DrawerFormProps, any> {
     );
   };
 
+  onImageUrlChange = (url: string) => {
+    const { form } = this.props;
+    const { setFieldsValue } = form;
+
+    setFieldsValue({
+      imageUrl: url
+    });
+  };
+
   render() {
     const {
         form,
@@ -90,7 +100,7 @@ class DrawerForm extends PureComponent<DrawerFormProps, any> {
       } = this.props,
       { currentLanguage, languagesList } = this.state,
       { getFieldDecorator } = form,
-      { questions, required, options } = inputData;
+      { questions, required, options, imageUrl } = inputData;
 
     return (
       <Form layout="vertical">
@@ -105,6 +115,14 @@ class DrawerForm extends PureComponent<DrawerFormProps, any> {
               onNewLanguage={this.onNewLanguage}
               onRemoveLanguage={this.onRemoveLanguage}
             />
+          )}
+        </Form.Item>
+        
+        <Form.Item label={<TranslatedText id="settings.form.image" />}>
+          {getFieldDecorator("imageUrl", {
+              initialValue: imageUrl
+          })(
+            <Input style={{ marginBottom: '2rem' }} placeholder="URL de imagen" onChange={(e) => this.onImageUrlChange(e.target.value)}/>
           )}
         </Form.Item>
 
