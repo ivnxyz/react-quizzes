@@ -145,7 +145,7 @@ class DrawerForm extends PureComponent<DrawerFormProps, any> {
             initialValue: required,
             valuePropName: "checked"
           })(
-            <Checkbox>
+            <Checkbox style={{ visibility: "hidden" }}>
               <TranslatedText id="settings.form.required" />
             </Checkbox>
           )}

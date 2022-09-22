@@ -25,7 +25,7 @@ export default (/* props */) => {
     const elementOptions: IinputData = {
       id: uuidV4(),
       element: item.key,
-      required: false,
+      required: true,
       questions: item.questions
     };
 
