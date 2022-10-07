@@ -1,17 +1,10 @@
 import React from "react";
 import Avatar from "antd/es/avatar/index";
 import Icon from "antd/es/icon/index";
-import TextInput from "./Components/TextInput";
-import Select from "./Components/Select";
-import Checkboxes from "./Components/Checkboxes";
 import RadioButtons from "./Components/RadioButtons";
-import NumberInput from "./Components/NumberInput";
 import MultiLineInput from "./Components/MultiLineInput";
-import Rate from "./Components/Rate";
 
 import radioButtonIcon from "./CustomIcons/radiobuttonicon";
-import inputIcon from "./CustomIcons/inputIcon";
-import numberInputIcon from "./CustomIcons/numberInputIcon";
 import multiLineInputIcon from "./CustomIcons/multiLineInputIcon";
 
 function _defaultItems() {
