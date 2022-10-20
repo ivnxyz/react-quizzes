@@ -19,6 +19,11 @@ export default forwardRef((props: any, ref: any) => {
         />
       }
     >
+      <div>
+        {
+          (inputData.imageUrl && inputData.imageUrl.length > 0) && <img style={{marginBottom: '1rem', marginTop: '1rem', borderRadius: '10px', objectFit: 'cover', objectPosition: 'center'}} src={inputData.imageUrl} alt="" />
+        }
+      </div>
       {getFieldDecorator(id, {
         initialValue: defaultValue,
         rules: [

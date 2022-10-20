@@ -46,9 +46,6 @@ class Quizz extends PureComponent<any, any> {
 
               return (
                 <div key={item.id}>
-                  {
-                    (item.imageUrl && item.imageUrl.length > 0) && <img style={{width: '100%', marginBottom: '1rem', borderRadius: '10px', objectFit: 'cover', objectPosition: 'center'}} src={item.imageUrl} alt="" />
-                  }
                   <Component
                     // render the toolbox component
                     key={item.id}
